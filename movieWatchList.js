@@ -36,6 +36,7 @@ class InName extends React.Component{
     axios.get(`https://www.omdbapi.com/?apikey=[use your own key]&i=${this.state.imdbID}`)
       .then(resp=>{
         this.props.onSubmit(resp.data);
+        this.setState({imdbID: '' });
       });
   };
 
